@@ -7,7 +7,7 @@
 #include <string.h>
 
 #define MAXNAME 25
-#define MAXARRAY 1
+#define MAXARRAY 50
 
 typedef struct sStudent {
 	char firstName[MAXNAME];
