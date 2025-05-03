@@ -16,7 +16,7 @@ Returns: None
 */
 void enqueue(sStudent waitingLine[]) {
 	sStudent newStudent = { 0 };			//To prevent getting errors of uninitialized variable ==> set it to { 0 }, though it is a struct with "3" members
-	int index = countElements(waitingLine); // check again later
+	int index = countElements(waitingLine); // ??
 
 	while (1) {
 		if (index == MAXARRAY) {
@@ -56,6 +56,25 @@ Parameters:
 Returns: None
 */
 void dequeue(sStudent waitingLine[]) {
+	int counter = countElements(waitingLine);	//counter=3
+	sStudent firstStudent = waitingLine[0];
+
+	while (1) {
+		if (counter == 0) {
+			printf("This queue does not contain any students.\n\n");
+			break;
+		}
+		//removing students
+		else {
+			printf("Student %s %s, %lu was successfuly removed from the queue.\n\n", firstStudent.firstName, firstStudent.lastName, firstStudent.matNo);
+
+			for (int i = 0; i < counter; i++) {
+				waitingLine[i] = waitingLine[i+1];		//Why do i not need to re-assign the newStudent again and somehow it still works?
+				//break;		//should not be included, cuz it breaks the whole , meaning this loop would only execute once and the rest of the queue is not shifted at all: students at index 1 and beyond are not moved
+			}
+			break;
+		}
+	}
 	return;
 }
 
@@ -72,10 +91,12 @@ Returns:
 
 */
 int isEmpty(sStudent waitingLine[]) {
-	if (countElements == 0)
-		printf("The queue is empty.\n");
+	int counter = countElements(waitingLine);
 
-	return 0;
+	if (counter == 0) {
+		printf("The queue is empty.\n");
+		return 0;
+	}
 }
 
 
@@ -111,7 +132,7 @@ Returns: None
 void printQueue(sStudent waitingLine[]) {
 	int numberStudents = countElements(waitingLine);
 	for (int i = 0; i < numberStudents; i++) {
-		printf("Student %3d:\t%s\t%s\t%ld\n", i + 1, waitingLine[i].firstName, waitingLine[i].lastName, waitingLine[i].matNo);
+		printf("Student %3d:\t%s\t%s\t%ld\n\n", i + 1, waitingLine[i].firstName, waitingLine[i].lastName, waitingLine[i].matNo);
 	}
 	return;
 }
