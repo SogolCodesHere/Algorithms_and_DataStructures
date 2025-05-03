@@ -97,6 +97,8 @@ int isEmpty(sStudent waitingLine[]) {
 		printf("The queue is empty.\n");
 		return 0;
 	}
+	else
+		return 1;
 }
 
 

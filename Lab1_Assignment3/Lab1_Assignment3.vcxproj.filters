@@ -15,15 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Lab1_QueueArray_Template_Lib.c">
+    <ClCompile Include="Lab1_QueueList_Template.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Lab1_QueueArray_Template.c">
+    <ClCompile Include="Lab1_QueueList_Template_Lib.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Lab1_QueueArray_Template_Lib.h">
+    <ClInclude Include="Lab1_QueueList_Template_Lib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
